@@ -360,7 +360,7 @@
                 <td class="w200" *ngIf="active_tab != 'Pending'">
 
                   <ng-container *ngIf="assign_login_data.organisation_data.payout =='0'">
-                    {{row.transfer_remark.replaceAll('_',' ') | titlecase}}
+                    {{row.transfer_remark?.replaceAll('_',' ') | titlecase}}
                     <div class="action-button text-right"
                       *ngIf="row.gift_status == 'Transferred' && assign_login_data2.edit_redeem_request=='1'">
                       <button mat-icon-button matTooltip="Edit"
