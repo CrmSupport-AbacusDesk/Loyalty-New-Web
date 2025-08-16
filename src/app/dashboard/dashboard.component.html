@@ -6,8 +6,8 @@
                 *ngIf="logined_user_data.view_sfa_dashboard=='1' && (departmentType == 'SFA' || departmentType == 'All')"></mat-tab>
             <mat-tab label="Enquiry"
                 *ngIf="logined_user_data.view_sfa_dashboard=='1' && (departmentType == 'SFA' || departmentType == 'All')"></mat-tab>
-            <mat-tab label="Influencer Reward"
-                *ngIf="logined_user_data.view_loyalty_dashboard=='1' && (departmentType == 'LOYALTY' || departmentType == 'All')"></mat-tab>
+            <!-- <mat-tab label="Influencer Reward"
+                *ngIf="logined_user_data.view_loyalty_dashboard=='1' && (departmentType == 'LOYALTY' || departmentType == 'All')"></mat-tab> -->
             <mat-tab label="Account"
                 *ngIf="logined_user_data.view_dms_dashboard=='1' && (departmentType == 'DMS' || departmentType == 'All')"></mat-tab>
         </mat-tab-group>
@@ -32,22 +32,25 @@
                                 <h2>Sales Target - {{today_date | date:'MMM, yyyy'}}</h2>
                             </div>
                             <div class="amountBox">
-                               <div class="amountValues">
-                                <p class="title">Target</p>
-                                <p class="targetAmount">{{logined_user_data.organisation_data.order_place=='0'? '₹':''}} {{currentMonthTarget?.target?.toLocaleString('en-IN',{style:'decimal',
-                                    currency:'INR'}) }}</p>
-                               </div>
-                               <div class="amountValues">
-                                <p class="title">Achievement</p>
-                                <p class="monthAchievement">{{logined_user_data.organisation_data.order_place=='0'? '₹':''}} {{currentMonthTarget.achieve?.toLocaleString('en-IN',{style:'decimal',
-                                    currency:'INR'})}}</p>
-                               </div>
+                                <div class="amountValues">
+                                    <p class="title">Target</p>
+                                    <p class="targetAmount">{{logined_user_data.organisation_data.order_place=='0'?
+                                        '₹':''}} {{currentMonthTarget?.target?.toLocaleString('en-IN',{style:'decimal',
+                                        currency:'INR'}) }}</p>
+                                </div>
+                                <div class="amountValues">
+                                    <p class="title">Achievement</p>
+                                    <p class="monthAchievement">{{logined_user_data.organisation_data.order_place=='0'?
+                                        '₹':''}} {{currentMonthTarget.achieve?.toLocaleString('en-IN',{style:'decimal',
+                                        currency:'INR'})}}</p>
+                                </div>
                             </div>
-                            
+
                             <div class="progress-container">
-                                <div class="progress-bar" [style.width.%]="currentMonthTarget.percent" style="background-color: #28a745;"></div>
+                                <div class="progress-bar" [style.width.%]="currentMonthTarget.percent"
+                                    style="background-color: #28a745;"></div>
                             </div>
-                            <p class="progress-text">{{currentMonthTarget.percent}}% Completed</p> 
+                            <p class="progress-text">{{currentMonthTarget.percent}}% Completed</p>
                             <!-- <div class="top-column">
                                 <div class="innerBox">
                                     <div class="valuebox">
@@ -71,19 +74,22 @@
 
                             <div class="amountBox">
                                 <div class="amountValues">
-                                 <p class="title">Target</p>
-                                 <p class="targetAmount"> {{logined_user_data.organisation_data.order_place =='0'? '₹':''}} {{(currentFinancialYearTarget.target?.toLocaleString("en-IN",
-                                    {style:'decimal',currency:"INR"})||0)}}</p>
+                                    <p class="title">Target</p>
+                                    <p class="targetAmount"> {{logined_user_data.organisation_data.order_place =='0'?
+                                        '₹':''}} {{(currentFinancialYearTarget.target?.toLocaleString("en-IN",
+                                        {style:'decimal',currency:"INR"})||0)}}</p>
                                 </div>
                                 <div class="amountValues">
-                                 <p class="title">Achievement</p>
-                                 <p class="yearAchievement"> {{logined_user_data.organisation_data.order_place=='0'? '₹':''}}{{(currentFinancialYearTarget.achieve?.toLocaleString("en-IN",
-                                    {style:'decimal',currency:"INR"})||0)}}</p>
+                                    <p class="title">Achievement</p>
+                                    <p class="yearAchievement"> {{logined_user_data.organisation_data.order_place=='0'?
+                                        '₹':''}}{{(currentFinancialYearTarget.achieve?.toLocaleString("en-IN",
+                                        {style:'decimal',currency:"INR"})||0)}}</p>
                                 </div>
-                                
-                             </div>
-                             <div class="progress-container">
-                                <div class="progress-bar" [style.width.%]="currentFinancialYearTarget.percent" style="background-color: #fdc201;"></div>
+
+                            </div>
+                            <div class="progress-container">
+                                <div class="progress-bar" [style.width.%]="currentFinancialYearTarget.percent"
+                                    style="background-color: #fdc201;"></div>
                             </div>
                             <p class="progress-text">{{currentFinancialYearTarget.percent}}% Completed</p>
                             <!-- <div class="top-column">
@@ -118,7 +124,8 @@
                                     <h5 style="text-align: center;">({{today_date | date:'MMM, yyyy'}})</h5>
                                 </div>
                                 <div class="valuebox">
-                                    <span>{{logined_user_data.organisation_data.order_place=='0'? '₹':''}} {{(targetTilesData.currentRatePerDay?.toLocaleString("en-IN",
+                                    <span>{{logined_user_data.organisation_data.order_place=='0'? '₹':''}}
+                                        {{(targetTilesData.currentRatePerDay?.toLocaleString("en-IN",
                                         {style:"decimal", currency:"INR"})||0)}}</span>
                                 </div>
                             </div>
@@ -130,7 +137,8 @@
                                     <h5 style="text-align: center;">({{today_date | date:'MMM, yyyy'}})</h5>
                                 </div>
                                 <div class="valuebox">
-                                    <span>{{logined_user_data.organisation_data.order_place=='0'? '₹':''}} {{(targetTilesData.requiredRatePerDay?.toLocaleString("en-IN",
+                                    <span>{{logined_user_data.organisation_data.order_place=='0'? '₹':''}}
+                                        {{(targetTilesData.requiredRatePerDay?.toLocaleString("en-IN",
                                         {style:"decimal", currency:"INR"})||0)}}</span>
                                 </div>
                             </div>
@@ -168,7 +176,8 @@
                 <div class="col s12 m12 l12">
                     <div class="card">
                         <div class="card-head">
-                            <h2>Last Year VS Last Month Sales Growth ({{today_date | date:'yyyy'}}-{{currentDate.getFullYear()+1}})
+                            <h2>Last Year VS Last Month Sales Growth ({{today_date |
+                                date:'yyyy'}}-{{currentDate.getFullYear()+1}})
                             </h2>
                         </div>
                         <div class="card-body bulletChartTwo">
@@ -192,45 +201,45 @@
                             <h2>State wise Target vs Achievement</h2>
                         </div>
 
-                    <div class="cs-table scroll340">
-                        <div class="sticky-head">
-                            <div class="table-head">
-                                <table>
-                                    <tr>
-                                        <th class="w160">&nbsp;</th>
-                                        <th class="text-center" colspan="2">Month</th>
-                                        <th class="text-center" colspan="2">Year</th>
-                                    </tr> 
-                                </table>
+                        <div class="cs-table scroll340">
+                            <div class="sticky-head">
+                                <div class="table-head">
+                                    <table>
+                                        <tr>
+                                            <th class="w160">&nbsp;</th>
+                                            <th class="text-center" colspan="2">Month</th>
+                                            <th class="text-center" colspan="2">Year</th>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="table-head border-top">
+                                    <table>
+                                        <tr>
+                                            <th class="w160">State</th>
+                                            <th class="text-center">Target</th>
+                                            <th class="text-center">Achievement</th>
+                                            <th class="text-center">Target</th>
+                                            <th class="text-center">Achievement</th>
+                                        </tr>
+                                    </table>
+                                </div>
                             </div>
-                            <div class="table-head border-top">
-                                <table>
-                                    <tr>
-                                        <th class="w160">State</th>
-                                        <th class="text-center">Target</th>
-                                        <th class="text-center">Achievement</th>
-                                        <th class="text-center">Target</th>
-                                        <th class="text-center">Achievement</th>
-                                    </tr>
-                                </table>
-                            </div>
-                        </div>
-                        <div class="table-container">
-                            <div class="table-content">
-                                <table>
-                                    <tr *ngFor="let row of stateTargetAchievement">
-                                        <!-- <a (click)="openModal()">Andhra Pradesh</a> -->
-                                        <td class="w160">{{row.state_name}}</td>
-                                        <td class="text-center">{{row.monthly_target}}</td>
-                                        <td class="text-center">{{row.monthly_achieved}}</td>
-                                        <td class="text-center">{{row.yearly_target}}</td>
-                                        <td class="text-center">{{row.yearly_achieved}}</td>
-                                    </tr>
-                                </table>
+                            <div class="table-container">
+                                <div class="table-content">
+                                    <table>
+                                        <tr *ngFor="let row of stateTargetAchievement">
+                                            <!-- <a (click)="openModal()">Andhra Pradesh</a> -->
+                                            <td class="w160">{{row.state_name}}</td>
+                                            <td class="text-center">{{row.monthly_target}}</td>
+                                            <td class="text-center">{{row.monthly_achieved}}</td>
+                                            <td class="text-center">{{row.yearly_target}}</td>
+                                            <td class="text-center">{{row.yearly_achieved}}</td>
+                                        </tr>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
                 </div>
 
                 <div class="col s12 m6 l6">
@@ -238,43 +247,44 @@
                         <div class="card-head">
                             <h2>RSM wise Target vs Achievement</h2>
                         </div>
-                    <div class="cs-table scroll340">
-                        <div class="sticky-head">
-                            <div class="table-head">
-                                <table>
-                                    <tr>
-                                        <th class="w160">&nbsp;</th>
-                                        <th class="text-center" colspan="2">Month</th>
-                                        <th class="text-center" colspan="2">Year</th>
-                                    </tr> 
-                                </table>
+                        <div class="cs-table scroll340">
+                            <div class="sticky-head">
+                                <div class="table-head">
+                                    <table>
+                                        <tr>
+                                            <th class="w160">&nbsp;</th>
+                                            <th class="text-center" colspan="2">Month</th>
+                                            <th class="text-center" colspan="2">Year</th>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="table-head border-top">
+                                    <table>
+                                        <tr>
+                                            <th class="w160">RSM</th>
+                                            <th class="text-center">Target</th>
+                                            <th class="text-center">Achievement</th>
+                                            <th class="text-center">Target</th>
+                                            <th class="text-center">Achievement</th>
+                                        </tr>
+                                    </table>
+                                </div>
                             </div>
-                            <div class="table-head border-top">
-                                <table>
-                                    <tr>
-                                        <th class="w160">RSM</th>
-                                        <th class="text-center">Target</th>
-                                        <th class="text-center">Achievement</th>
-                                        <th class="text-center">Target</th>
-                                        <th class="text-center">Achievement</th>
-                                    </tr>
-                                </table>
+                            <div class="table-container">
+                                <div class="table-content">
+                                    <table>
+                                        <tr *ngFor="let row of rsmTargetAchievement">
+                                            <td class="w160"><a class="link-btn" mat-button
+                                                    (click)="openModal('rsmWiseSales',row.id)">{{row.rsm_name}}</a></td>
+                                            <td class="text-center">{{row.monthly_target}}</td>
+                                            <td class="text-center">{{row.monthly_achieved}}</td>
+                                            <td class="text-center">{{row.yearly_target}}</td>
+                                            <td class="text-center">{{row.yearly_achieved}}</td>
+                                        </tr>
+                                    </table>
+                                </div>
                             </div>
                         </div>
-                        <div class="table-container">
-                            <div class="table-content">
-                                <table>
-                                    <tr *ngFor="let row of rsmTargetAchievement">
-                                        <td class="w160"><a class="link-btn" mat-button (click)="openModal('rsmWiseSales',row.id)">{{row.rsm_name}}</a></td>
-                                        <td class="text-center">{{row.monthly_target}}</td>
-                                        <td class="text-center">{{row.monthly_achieved}}</td>
-                                        <td class="text-center">{{row.yearly_target}}</td>
-                                        <td class="text-center">{{row.yearly_achieved}}</td>
-                                    </tr>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
 
                     </div>
                 </div>
@@ -407,8 +417,8 @@
                 </div>
             </div> -->
 
-           
-            
+
+
         </ng-container>
 
 
@@ -418,17 +428,18 @@
                 <div class="col m6 l6">
                     <div class="card upperBox">
                         <div class="card-head">
-                                    <h2>Total Enquiry</h2>
-                                <div class="col s12">
-                                    <mat-form-field appearance="outline">
-                                        <mat-label>Type</mat-label>
-                                        <mat-select name="enquirycounts" #enquirycounts="ngModel" [(ngModel)]="search.enquirycounts" (ngModelChange)="getTotalEnquiry()">
-                                            <mat-option value="">Till Today</mat-option>
-                                            <mat-option value="Monthly">Current Month</mat-option>
-                                            <mat-option value="Yesterday">Yesterday</mat-option>
-                                        </mat-select>
-                                    </mat-form-field>
-                                </div>
+                            <h2>Total Enquiry</h2>
+                            <div class="col s12">
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Type</mat-label>
+                                    <mat-select name="enquirycounts" #enquirycounts="ngModel"
+                                        [(ngModel)]="search.enquirycounts" (ngModelChange)="getTotalEnquiry()">
+                                        <mat-option value="">Till Today</mat-option>
+                                        <mat-option value="Monthly">Current Month</mat-option>
+                                        <mat-option value="Yesterday">Yesterday</mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </div>
                         </div>
 
                         <div class="card-body p10">
@@ -492,7 +503,9 @@
                                 <div class="col s12">
                                     <mat-form-field appearance="outline">
                                         <mat-label>Type</mat-label>
-                                        <mat-select name="enquirySources" #enquirySources="ngModel" [(ngModel)]="search.enquirySources" (ngModelChange)="getSourceWiseEnquiry()">
+                                        <mat-select name="enquirySources" #enquirySources="ngModel"
+                                            [(ngModel)]="search.enquirySources"
+                                            (ngModelChange)="getSourceWiseEnquiry()">
                                             <mat-option value="">Till Today</mat-option>
                                             <mat-option value="Monthly">Current Month</mat-option>
                                             <mat-option value="Yesterday">Yesterday</mat-option>
@@ -507,7 +520,8 @@
                                             <ul class="indicators sourceIndicators">
                                                 <ng-container *ngFor="let row of sourceWiseEnquiry">
                                                     <li> <span [style.background]="row.color"></span> {{row.source}}
-                                                        <strong>({{row.value}})</strong> </li>
+                                                        <strong>({{row.value}})</strong>
+                                                    </li>
                                                 </ng-container>
                                             </ul>
                                         </div>
@@ -530,17 +544,18 @@
                             <h2>Source Wise Conversion</h2>
                         </div>
                         <div class="card-head">
-                                    
-                                <div class="col s12">
-                                    <mat-form-field appearance="outline">
-                                        <mat-label>Type</mat-label>
-                                        <mat-select name="Sourcewiseconv" #Sourcewiseconv="ngModel" [(ngModel)]="search.Sourcewiseconv" (ngModelChange)="getSourceWiseConversion()">
-                                            <mat-option value="">Till Today</mat-option>
-                                            <mat-option value="Monthly">Current Month</mat-option>
-                                            <mat-option value="Yesterday">Yesterday</mat-option>
-                                        </mat-select>
-                                    </mat-form-field>
-                                </div>
+
+                            <div class="col s12">
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Type</mat-label>
+                                    <mat-select name="Sourcewiseconv" #Sourcewiseconv="ngModel"
+                                        [(ngModel)]="search.Sourcewiseconv" (ngModelChange)="getSourceWiseConversion()">
+                                        <mat-option value="">Till Today</mat-option>
+                                        <mat-option value="Monthly">Current Month</mat-option>
+                                        <mat-option value="Yesterday">Yesterday</mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </div>
                         </div>
                         <div class="card-body sourceWiseLead">
                             <!-- <div class="indicatorsBox">
@@ -556,26 +571,28 @@
                         </div>
                     </div>
                 </div>
-              
+
             </div>
             <div class="row">
-                  <div class="col s12 m12 l12">
+                <div class="col s12 m12 l12">
                     <div class="card">
                         <div class="card-head">
                             <h2>Category Wise Enquiry</h2>
                         </div>
-                             <div class="card-head">
-                                    
-                                <div class="col s12">
-                                    <mat-form-field appearance="outline">
-                                        <mat-label>Type</mat-label>
-                                        <mat-select name="categoryWiseenq" #categoryWiseenq="ngModel" [(ngModel)]="search.categoryWiseenq" (ngModelChange)="getcategoryWiseConversion()">
-                                            <mat-option value="">Till Today</mat-option>
-                                            <mat-option value="Monthly">Current Month</mat-option>
-                                            <mat-option value="Yesterday">Yesterday</mat-option>
-                                        </mat-select>
-                                    </mat-form-field>
-                                </div>
+                        <div class="card-head">
+
+                            <div class="col s12">
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Type</mat-label>
+                                    <mat-select name="categoryWiseenq" #categoryWiseenq="ngModel"
+                                        [(ngModel)]="search.categoryWiseenq"
+                                        (ngModelChange)="getcategoryWiseConversion()">
+                                        <mat-option value="">Till Today</mat-option>
+                                        <mat-option value="Monthly">Current Month</mat-option>
+                                        <mat-option value="Yesterday">Yesterday</mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </div>
                         </div>
                         <div class="card-body categoryWiseLead">
                             <zingchart-angular [config]="categoryleadConfig" class="categoryleadConfig"
@@ -587,21 +604,22 @@
             <div class="row">
                 <div class="col s12 m12 l12">
                     <div class="card">
-                         <div class="col s12">
-                                    <mat-form-field appearance="outline">
-                                        <mat-label>Type</mat-label>
-                                        <mat-select name="stateWiseenq" #stateWiseenq="ngModel" [(ngModel)]="search.stateWiseenq" (ngModelChange)="getStateWiseEnquiry()">
-                                            <mat-option value="">Till Today</mat-option>
-                                            <mat-option value="Monthly">Current Month</mat-option>
-                                            <mat-option value="Yesterday">Yesterday</mat-option>
-                                        </mat-select>
-                                    </mat-form-field>
-                                </div>
+                        <div class="col s12">
+                            <mat-form-field appearance="outline">
+                                <mat-label>Type</mat-label>
+                                <mat-select name="stateWiseenq" #stateWiseenq="ngModel"
+                                    [(ngModel)]="search.stateWiseenq" (ngModelChange)="getStateWiseEnquiry()">
+                                    <mat-option value="">Till Today</mat-option>
+                                    <mat-option value="Monthly">Current Month</mat-option>
+                                    <mat-option value="Yesterday">Yesterday</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
                         <div class="card-head">
                             <h2>State Wise Enquiry ({{today_date |
                                 date:'yyyy'}}-{{currentDate.getFullYear()+1}})</h2>
                         </div>
-                       
+
                         <div class="card-body pt0 pb10">
                             <div class="cs-table">
                                 <div class="bdrt">
@@ -616,7 +634,7 @@
                                                 <th class="w100 text-center">Inprocess</th>
                                                 <th class="w100 text-center">Win </th>
                                                 <th class="w100 text-center">Junk & Close</th>
-                                               
+
                                             </tr>
                                         </table>
                                     </div>
@@ -633,7 +651,7 @@
                                                 <td class="w100 text-center">{{row.Inprocess}}</td>
                                                 <td class="w100 text-center">{{row.Win}}</td>
                                                 <td class="w100 text-center">{{row.Disqualified}}</td>
-                                                
+
                                             </tr>
                                         </table>
                                     </div>
@@ -652,20 +670,21 @@
                 <div class="col s12 m12 l12">
 
                     <div class="card">
-                          <div class="col s12">
-                                    <mat-form-field appearance="outline">
-                                        <mat-label>Type</mat-label>
-                                        <mat-select name="rsmWiseenq" #rsmWiseenq="ngModel" [(ngModel)]="search.rsmWiseenq" (ngModelChange)="getRsmWiseEnquiry()">
-                                            <mat-option value="">Till Today</mat-option>
-                                            <mat-option value="Monthly">Current Month</mat-option>
-                                            <mat-option value="Yesterday">Yesterday</mat-option>
-                                        </mat-select>
-                                    </mat-form-field>
-                                </div>
+                        <div class="col s12">
+                            <mat-form-field appearance="outline">
+                                <mat-label>Type</mat-label>
+                                <mat-select name="rsmWiseenq" #rsmWiseenq="ngModel" [(ngModel)]="search.rsmWiseenq"
+                                    (ngModelChange)="getRsmWiseEnquiry()">
+                                    <mat-option value="">Till Today</mat-option>
+                                    <mat-option value="Monthly">Current Month</mat-option>
+                                    <mat-option value="Yesterday">Yesterday</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
                         <div class="card-head">
                             <h2>RSM Wise Enquiry ({{today_date | date:'yyyy'}}-{{currentDate.getFullYear()+1}})</h2>
                         </div>
-                       
+
                         <div class="card-body pt0 pb10">
                             <div class="cs-table">
                                 <div class="bdrt border-top">
@@ -680,7 +699,7 @@
                                                 <th class="w100 text-center">Inprocess</th>
                                                 <th class="w100 text-center">Win </th>
                                                 <th class="w100 text-center">Junk & Close</th>
-                                                
+
                                             </tr>
                                         </table>
                                     </div>
@@ -690,14 +709,16 @@
                                         <table>
                                             <tr *ngFor="let row of rsmWiseEnquiry; let i =index">
                                                 <td class="w60 text-center">{{i+1}}</td>
-                                                <td><a class="link-btn ml10" mat-button (click)="openModal('rsmWiseEnquiry',row.id)">{{row.rsm_name}}</a></td>
+                                                <td><a class="link-btn ml10" mat-button
+                                                        (click)="openModal('rsmWiseEnquiry',row.id)">{{row.rsm_name}}</a>
+                                                </td>
                                                 <td class="w100 text-center">{{row.total}}</td>
                                                 <td class="w110 text-center">{{row.Pending}}</td>
                                                 <td class="w100 text-center">{{row.Assigned}}</td>
                                                 <td class="w100 text-center">{{row.Inprocess}}</td>
                                                 <td class="w100 text-center">{{row.Win}}</td>
                                                 <td class="w100 text-center">{{row.Disqualified}}</td>
-                                                
+
                                             </tr>
                                         </table>
                                     </div>
@@ -846,7 +867,7 @@
                 </div>
             </div>
 
-            
+
         </ng-container>
         <ng-container
             *ngIf="tabValue == 'Account' && logined_user_data.view_dms_dashboard=='1' && (departmentType == 'DMS' || departmentType == 'All')">
@@ -1433,7 +1454,7 @@
                 <div class="col s12 m12 l12">
                     <div class="card">
                         <div class="card-head">
-                            <h2>State Wise Scanning</h2> 
+                            <h2>State Wise Scanning</h2>
                         </div>
                         <div class="card-body couponChartBox">
                             <ng-container *ngIf="last30Loader">

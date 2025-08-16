@@ -1,9 +1,11 @@
 <header>
-    <div class="logo">
+    <!-- <div class="logo">
         <img src="{{login_data?.organisation_data?.logo ? (url+login_data?.organisation_data?.logo) : 'assets/img/logo.png'}}" class="lightmode" *ngIf="login_data?.id != '1'">
-        <img src="assets/img/{{colorMode == false ? 'logo' : 'darklogo'}}.png" class="lightmode" *ngIf="login_data.id == '1'">
-    </div>
-    <button class="ml12" mat-icon-button (click)="toggleNav()" matTooltip="{{toggle == false ? 'Close Menu' : 'Open Menu'}}">
+        <img src="assets/img/{{colorMode == false ? 'logo' : 'darklogo'}}.png" class="lightmode"
+            *ngIf="login_data.id == '1'">
+    </div> -->
+    <button class="ml12" mat-icon-button (click)="toggleNav()"
+        matTooltip="{{toggle == false ? 'Close Menu' : 'Open Menu'}}">
         <i class="material-icons">{{toggle == false ? 'menu' : 'menu_open'}}</i>
     </button>
     <!-- <button class="ds-none" mat-icon-button (click)="nightMode()" matTooltip="{{colorMode == false ? 'Dark Mode' : 'Light Mode'}}">
@@ -13,8 +15,8 @@
         <form class="form">
             <mat-form-field appearance="outline" class=" mt12 full-width mat-from">
                 <input class="input-btn" matInput placeholder="Enter Search...." [matAutocomplete]="globalsearch"
-                (input)="filter_dr(searchData.globalsearch)" name="globalsearch" #globalsearch="ngModel"
-                [(ngModel)]="searchData.globalsearch">
+                    (input)="filter_dr(searchData.globalsearch)" name="globalsearch" #globalsearch="ngModel"
+                    [(ngModel)]="searchData.globalsearch">
                 <button mat-icon-button class="fix-search-btn"><mat-icon>search</mat-icon></button>
                 <mat-autocomplete #globalsearch="matAutocomplete">
                     <mat-option *ngFor="let row of dataList" (click)="gotodetail(row);" value="{{row}}">
@@ -24,7 +26,7 @@
             </mat-form-field>
         </form>
     </div>
-    
+
     <div class="left-auto dflex1">
         <div class="logo" *ngIf="login_data?.id != '1' && login_data?.organisation_data?.logo">
             <a href="https://basiq360.com/in-en/" target="_blank">
@@ -32,15 +34,15 @@
                 <img src="assets/img/darklogo.png" class="darkMode h15 mr16">
             </a>
         </div>
-        
-        <div class="downloader-progressbar" *ngIf="downloaderActive$" >
+
+        <div class="downloader-progressbar" *ngIf="downloaderActive$">
             <div class="dw-img">
                 <i class="material-icons">downloading</i>
             </div>
             <div class="dw-content">
                 <div class="dw-upper">
                     <p>Downloading... {{remainingCount | async}} of {{totalCount | async}}</p>
-                    
+
                     <button mat-icon-button (click)="cancelDownloading('')" matTooltip="Cancel">
                         <i class="material-icons">cancel</i>
                     </button>
@@ -55,7 +57,7 @@
                 </div> -->
             </div>
         </div>
-        
+
         <!-- <div class="downloader-progressbar" *ngIf="uploaderActive$">
             <div class="dw-img">
                 <i class="material-icons">upload_2</i>
@@ -82,10 +84,11 @@
                 <!-- <strong>Welcome: &nbsp;</strong>  -->
                 <div>
                     <strong>{{activeAcc?.dr_code}}</strong>
-                    <br/>
+                    <br />
                     <span>{{activeAcc?.company_name}}</span>
-                </div> 
-                <i class="material-icons" *ngIf="accList?.length>1">keyboard_arrow_down</i></div>
+                </div>
+                <i class="material-icons" *ngIf="accList?.length>1">keyboard_arrow_down</i>
+            </div>
             <button mat-icon-button (click)="logoutConfimation()" matTooltip="Logout">
                 <i class="material-icons">power_settings_new</i>
             </button>

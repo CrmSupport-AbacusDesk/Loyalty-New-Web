@@ -125,7 +125,7 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
     this.rout.params.subscribe(params => {
-      console.log('parms ',params)
+      console.log('parms ', params)
       this.departmentType = params['type'];
       if ((this.tabValue == 'Sales' && this.logined_user_data.view_sfa_dashboard == '1' && (this.departmentType == 'SFA' || this.departmentType == 'All')) ||
         (this.tabValue == 'Enquiry' && this.logined_user_data.view_sfa_dashboard == '1' && (this.departmentType == 'SFA' || this.departmentType == 'All')) ||
@@ -139,21 +139,6 @@ export class DashboardComponent implements OnInit {
       }
       this.getTabValueBasedOnDepartment();
     });
-
-    // if (this.logined_user_data.view_sfa_dashboard == '1') {
-    //   this.sfa()
-    // }
-    // else if (this.logined_user_data.view_loyalty_dashboard == '1') {
-    //   this.tabValue = 'Influencer Reward';
-    //   console.log("hello ji");
-
-    //   this.loyalty();
-    // }
-    // else if (this.logined_user_data.view_dms_dashboard == '1') {
-    //   this.tabValue = 'Account';
-    //   this.dms()
-    // }
-
 
 
     setTimeout(() => {
@@ -245,7 +230,7 @@ export class DashboardComponent implements OnInit {
     this.getIndiaMapData();
     this.get_segmentByPercent();
     this.get_financialYearSalesGrowth();
-    
+
 
     setTimeout(() => {
 
@@ -326,7 +311,7 @@ export class DashboardComponent implements OnInit {
   }
 
   dms() {
-    
+
     this.getIndiainvoices();
     this.getTotalOutstandingBalance();
     this.getTotalWithinDueBalance();
@@ -351,7 +336,7 @@ export class DashboardComponent implements OnInit {
       this.getDisqualifiedEnquiry();
       this.getStateWiseEnquiry();
       if (this.logined_user_data.org_id == '17') {
-        
+
         this.getRsmWiseEnquiry();
         this.getTop5dealerEnquiry();
       }
@@ -3835,7 +3820,7 @@ export class DashboardComponent implements OnInit {
   stateWiseEnquiry: any = {};
   getStateWiseEnquiry() {
 
-    this.service.post_rqst({ 'data': { 'date_from': this.filter.date_from, 'date_to': this.filter.date_to,'search':this.search.stateWiseenq } }, 'Dashboard/stateWiseEnquiry').subscribe((result) => {
+    this.service.post_rqst({ 'data': { 'date_from': this.filter.date_from, 'date_to': this.filter.date_to, 'search': this.search.stateWiseenq } }, 'Dashboard/stateWiseEnquiry').subscribe((result) => {
 
       if (result['statusCode'] == 200) {
         this.stateWiseEnquiry = result['result'];
@@ -3852,7 +3837,7 @@ export class DashboardComponent implements OnInit {
   rsmWiseEnquiry: any = [];
   getRsmWiseEnquiry() {
 
-    this.service.post_rqst({ 'data': { 'date_from': this.filter.date_from, 'date_to': this.filter.date_to ,'search':this.search.rsmWiseenq} }, 'Dashboard/rsmWiseEnquiryData').subscribe((result) => {
+    this.service.post_rqst({ 'data': { 'date_from': this.filter.date_from, 'date_to': this.filter.date_to, 'search': this.search.rsmWiseenq } }, 'Dashboard/rsmWiseEnquiryData').subscribe((result) => {
 
       if (result['statusCode'] == 200) {
         this.rsmWiseEnquiry = result['result'];
@@ -4016,7 +4001,7 @@ export class DashboardComponent implements OnInit {
   }
   getSourceWiseConversion() {
 
-    this.service.post_rqst({ 'data': { 'date_from': this.filter.date_from, 'date_to': this.filter.date_to ,'search': this.search.Sourcewiseconv} }, 'Dashboard/sourceWiseConversion').subscribe((result) => {
+    this.service.post_rqst({ 'data': { 'date_from': this.filter.date_from, 'date_to': this.filter.date_to, 'search': this.search.Sourcewiseconv } }, 'Dashboard/sourceWiseConversion').subscribe((result) => {
 
       if (result['statusCode'] == 200) {
         this.sourceWiseConversion = result['result'];
@@ -4299,7 +4284,7 @@ export class DashboardComponent implements OnInit {
   getcategoryWiseConversion() {
 
 
-    this.service.post_rqst({ 'data': { 'date_from': this.filter.date_from, 'date_to': this.filter.date_to,'search': this.search.categoryWiseenq } }, 'Dashboard/categoryWiseEnquiry').subscribe((result) => {
+    this.service.post_rqst({ 'data': { 'date_from': this.filter.date_from, 'date_to': this.filter.date_to, 'search': this.search.categoryWiseenq } }, 'Dashboard/categoryWiseEnquiry').subscribe((result) => {
 
 
       if (result['statusCode'] == 200) {

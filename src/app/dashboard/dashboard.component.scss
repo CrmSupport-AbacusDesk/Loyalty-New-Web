@@ -1483,3 +1483,807 @@
         }
     }
 }
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .skydash-enquiry-container {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 20px;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .skydash-enquiry-container {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 16px;
+  }
+  
+  .skydash-enquiry-header {
+    padding: 16px 20px;
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+  
+  .skydash-enquiry-content {
+    padding: 20px;
+  }
+  
+  .skydash-enquiry-stats-grid {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 12px;
+  }
+  
+  .skydash-stat-item {
+    padding: 12px 8px;
+  }
+  
+  .skydash-stat-value {
+    font-size: 16px;
+  }
+  
+  .skydash-source-cards-grid {
+    grid-template-columns: repeat(11,1fr);
+    gap: 12px;
+  }
+  
+  .skydash-source-card {
+    padding: 16px;
+  }
+  
+  .skydash-source-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+  
+  .skydash-circular-progress-section {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .skydash-enquiry-stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .skydash-source-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .skydash-legend-row {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .skydash-legend-item {
+    min-width: auto;
+  }
+}
+
+/* Animation for progress bars */
+@keyframes progressAnimation {
+  from {
+    width: 0%;
+  }
+  to {
+    width: var(--progress-width);
+  }
+}
+
+.skydash-progress-fill {
+  animation: progressAnimation 1s ease-out;
+}
+
+/* Hover effects for cards */
+.skydash-enquiry-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.skydash-enquiry-card:hover::before {
+  opacity: 1;
+}
+
+
+/* Top Performers Section */
+.top-performers-section {
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 16px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.section-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #374151;
+  margin: 0 0 20px 0;
+  text-align: left;
+}
+.section-title-target {
+  font-size: 18px;
+  font-weight: 600;
+  color: #374151;
+  text-align:left;
+}
+
+/* Carousel Container */
+.carousel-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  
+}
+
+.carousel-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Performer Card Base */
+.performer-card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateX(100%);
+  opacity: 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.performer-card.active {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.performer-card.slide-out-left {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+
+.performer-card.slide-in-right {
+  transform: translateX(100%);
+  opacity: 0;
+}
+
+/* Primary Card Styling */
+.primary-card {
+  // border-left: 4px solid #3b82f6;
+}
+
+/* Secondary Card Styling */
+.secondary-card {
+  // border-left: 4px solid #10b981;
+}
+
+/* Card Header */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.card-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #374151;
+  margin: 0;
+}
+
+.card-badge {
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.card-badge.primary {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.card-badge.secondary {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+/* Performers List */
+.performers-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex: 1;
+}
+
+/* Performer Item */
+.performer-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 6px;
+  background: #f9fafb;
+  transition: all 0.2s ease;
+  min-width: 250px;
+}
+
+.performer-item:hover {
+  background: #f3f4f6;
+  transform: translateX(2px);
+}
+
+/* Performer Rank */
+.performer-rank {
+  width: 28px;
+  height: 28px;
+  background: #6b7280;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.primary-card .performer-rank {
+  background: #3b82f6;
+}
+
+.secondary-card .performer-rank {
+  background: #10b981;
+}
+
+/* Performer Avatar */
+.performer-avatar {
+  flex-shrink: 0;
+}
+
+.performer-avatar img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #e5e7eb;
+  object-fit: cover;
+}
+
+/* Performer Info */
+.performer-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.performer-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+  margin: 0 0 2px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.performer-role {
+  font-size: 12px;
+  color: #6b7280;
+  margin: 0 0 8px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.performer-metrics {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.metric-value {
+  font-size: 13px;
+  font-weight: 600;
+  color: #059669;
+  background: #dcfce7;
+}
+
+.metric-achievement {
+  font-size: 12px;
+  color: #059669;
+  background: #dcfce7;
+  padding: 2px 6px;
+  border-radius: 10px;
+}
+
+/* Carousel Indicators */
+.carousel-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.indicator {
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+  color: #6b7280;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.indicator.active {
+  background: #3b82f6;
+  color: white;
+  border-color: #3b82f6;
+}
+
+.indicator:hover:not(.active) {
+  background: #f3f4f6;
+  border-color: #d1d5db;
+}
+
+/* Navigation Arrows */
+.carousel-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+  color: #6b7280;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-nav:hover {
+  background: #f9fafb;
+  color: #374151;
+  border-color: #d1d5db;
+}
+
+.carousel-nav.prev {
+  left: -16px;
+}
+
+.carousel-nav.next {
+  right: -16px;
+}
+
+.carousel-nav svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* Auto-play Controls */
+.carousel-controls {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.control-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  background: #ffffff;
+  color: #6b7280;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.control-btn:hover {
+  background: #f9fafb;
+  border-color: #d1d5db;
+}
+
+.control-btn svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .top-performers-section {
+    padding: 16px;
+    margin: 8px 0;
+  }
+  
+  .carousel-container {
+    max-width: 100%;
+    height: 300px;
+  }
+  
+  .performer-card {
+    padding: 16px;
+  }
+  
+  .performer-item {
+    min-width: 200px;
+    padding: 10px;
+  }
+  
+  .carousel-nav {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .carousel-nav.prev {
+    left: -14px;
+  }
+  
+  .carousel-nav.next {
+    right: -14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-container {
+    height: 320px;
+  }
+  
+  .performer-card {
+    padding: 12px;
+  }
+  
+  .section-title {
+    font-size: 16px;
+  }
+  
+  .performer-item {
+    min-width: 180px;
+    padding: 8px;
+  }
+  
+  .performer-name {
+    font-size: 13px;
+  }
+  
+  .metric-value {
+    font-size: 12px;
+  }
+}
+
+/* Animation Keyframes */
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutToLeft {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+/* Smooth transitions */
+.performer-card {
+  will-change: transform, opacity;
+}
+
+/* Loading state */
+.top-performers-section.loading {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.top-performers-section.loading::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* dashboard.component.css */
+.skydash-dashboard-container {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  background-color: #f5f7fa;
+ 
+}
+
+.skydash-analytics-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  flex: 1;
+}
+
+.skydash-card-header {
+  padding: 20px 24px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.skydash-card-header h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.skydash-view-all-link {
+  color: #4285f4;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.skydash-view-all-link:hover {
+  text-decoration: underline;
+}
+
+.skydash-card-content {
+  padding: 16px 24px 24px;
+}
+
+.skydash-analytics-description {
+  color: #6b7280;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0 0 20px;
+}
+
+.skydash-metrics-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  gap: 20px;
+}
+
+.skydash-metric-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.skydash-metric-label {
+  font-size: 12px;
+  color: #6b7280;
+  margin-bottom: 4px;
+}
+
+.skydash-metric-value {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.skydash-blue-text {
+  color: #4285f4;
+}
+
+.skydash-purple-text {
+  color: #6c5ce7;
+}
+
+.skydash-chart-container {
+  width: 100%;
+  height: 250px;
+  margin-top: 20px;
+}
+
+.skydash-line-chart, .skydash-bar-chart {
+  width: 100%;
+  height: 100%;
+}
+
+.skydash-axis-label {
+  font-size: 12px;
+  fill: #6b7280;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.skydash-grid-lines line {
+  stroke: #e5e7eb;
+  stroke-width: 1;
+}
+
+.skydash-chart-line {
+  fill: none;
+  stroke-width: 2;
+}
+
+.skydash-primary-line {
+  stroke: #4285f4;
+}
+
+.skydash-secondary-line {
+  stroke: #ff6b6b;
+}
+
+.skydash-chart-legend {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.skydash-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #374151;
+}
+
+.skydash-legend-color {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+}
+
+.skydash-offline-color {
+  background-color: #93c5fd;
+}
+
+.skydash-online-color {
+  background-color: #3b82f6;
+}
+
+.skydash-chart-bar {
+  transition: opacity 0.2s ease;
+}
+
+.skydash-chart-bar:hover {
+  opacity: 0.8;
+}
+
+.skydash-offline-bar {
+  fill: #93c5fd;
+}
+
+.skydash-online-bar {
+  fill: #3b82f6;
+}
+
+.skydash-sales-report {
+  position: relative;
+}
+
+.skydash-order-details {
+  position: relative;
+}
+
+/* Additional styling for better visual appearance */
+.skydash-analytics-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: box-shadow 0.3s ease;
+}
+
+.skydash-chart-line {
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.skydash-chart-bar {
+  stroke-width: 0;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .skydash-dashboard-container {
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px;
+  }
+  
+  .skydash-metrics-row {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  
+  .skydash-metric-item {
+    flex: 1;
+    min-width: 100px;
+  }
+  
+  .skydash-chart-container {
+    height: 200px;
+  }
+  
+  .skydash-chart-legend {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .skydash-card-header {
+    padding: 16px 20px 0;
+  }
+  
+  .skydash-card-content {
+    padding: 12px 20px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .skydash-dashboard-container {
+    padding: 12px;
+  }
+  
+  .skydash-metrics-row {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .skydash-metric-value {
+    font-size: 20px;
+  }
+  
+  .skydash-chart-container {
+    height: 180px;
+  }
+  
+  .skydash-card-header h3 {
+    font-size: 16px;
+  }
+  
+  .skydash-analytics-description {
+    font-size: 13px;
+  }
+}
+

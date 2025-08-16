@@ -36,12 +36,6 @@ export class DatabaseService implements OnInit {
 
 
 
-  // <------------------ Live Link ------------------------------>
-  // dbUrl = "https://portal.basiq360.com/api/index.php/";
-  // uploadUrl = "https://portal.basiq360.com/api/uploads/";
-  // downloadUrl = "https://portal.basiq360.com/api/uploads/Download_excel/";
-  // attachmentUrl = "https://portal.basiq360.com/api/uploads/Attachment/";
-  // producation: boolean = true;
 
 
   devlopmentMode: boolean = true;
@@ -83,7 +77,7 @@ export class DatabaseService implements OnInit {
 
 
   constructor(public http: HttpClient, private toastr: ToastrManager, public cryptoService: CryptoService, private _errService: ErrorService, public location: Location, public dialog: DialogComponent, private router: Router, public route: ActivatedRoute, private progressService: ProgressService) {
-    this.resetTime =21600000;
+    this.resetTime = 21600000;
     this.st_user = JSON.parse(localStorage.getItem('st_user')) || [];
 
   }
@@ -115,7 +109,7 @@ export class DatabaseService implements OnInit {
   }
 
   // **Login fetch data start** ///
-  
+
   auth_rqust(data: any, fn: any) {
     this.header.append('Content-Type', 'application/json');
     return this.http.post(this.dbUrl + fn, data, { headers: this.header })
@@ -231,11 +225,11 @@ export class DatabaseService implements OnInit {
   influencer_netwrk() {
     this.sessionTimer();
     this.st_user = JSON.parse(localStorage.getItem('st_user')) || [];
-    
+
     if (this.st_user.data) {
       this.login_data = this.st_user.data;
       this.post_rqst({ 'user_id': this.login_data.id, 'user_type': this.login_data.type }, "Influencer/influencerMasterList").subscribe(result => {
-        
+
         if (result) {
           this.InfluenceArray = result['result'];
         }
@@ -246,7 +240,7 @@ export class DatabaseService implements OnInit {
     }
     else {
       this.post_rqst({ 'user_id': this.login_data.id, 'user_type': this.login_data.type }, "Influencer/influencerMasterList").subscribe(result => {
-       
+
         if (result) {
           this.InfluenceArray = result['result'];
         }
@@ -297,10 +291,10 @@ export class DatabaseService implements OnInit {
       headers: { Authorization: 'Bearer ' + this.st_user.token }
     })
     // console.log(fetchUrl);
-    
+
     // const resp = await fetchUrl.json();
     // console.log(resp);
-    
+
     // const data = this.cryptoService.decryptData(JSON.stringify(resp))
     // if (data['statusCode'] != 200) {
     //   localStorage.removeItem('st_user');

@@ -1,7 +1,7 @@
 <div class="navigation">
 
     <!-- //----------------Navigation Filter Start------------------// -->
-    <div class="navigation_filter" *ngIf="login_data.user_type !='DMS' && login_data.org_id != 0">
+    <!-- <div class="navigation_filter" *ngIf="login_data.user_type !='DMS' && login_data.org_id != 0">
         <mat-form-field appearance="outline">
             <mat-select name="filter_type" [(ngModel)]="data.filter_type" #filter_type="ngModel"
                 (ngModelChange)="onFilterTypeChange($event)">
@@ -11,10 +11,10 @@
                 <mat-option *ngIf="login_data.organisation_data.loyalty == '1'" value="LOYALTY">LOYALTY</mat-option>
             </mat-select>
         </mat-form-field>
-    </div>
+    </div> -->
     <!-- //----------------Navigation Filter End------------------// -->
 
-    <div class="nav-container" >
+    <div class="nav-container">
         <ul>
             <li
                 *ngIf="login_data.view_sfa_dashboard=='1' || login_data.view_dms_dashboard=='1' || login_data.view_loyalty_dashboard=='1' || login_data.view_service_dashboard=='1'">
