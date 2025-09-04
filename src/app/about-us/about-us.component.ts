@@ -42,7 +42,7 @@ export class AboutUsComponent implements OnInit {
   constructor(public service:DatabaseService, public cryptoService:CryptoService, public session: sessionStorage, public toast:ToastrManager, private router: Router, private route: ActivatedRoute) {
     this.assign_login_data = this.session.getSession();
     this.logined_user_data = this.assign_login_data.value.data;
-    this.url = this.service.uploadUrl + 'about/';
+    this.url = this.service.uploadUrl;
   }
   
   ngOnInit() {

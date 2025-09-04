@@ -55,7 +55,7 @@ export class SupportListComponent implements OnInit {
 
   constructor(public service: DatabaseService, public cryptoService:CryptoService, public location: Location, public navparams: ActivatedRoute, public toast: ToastrManager, public dialog: MatDialog, public alert: DialogComponent, public session: sessionStorage) {
     this.page_limit = service.pageLimit;
-    this.url = this.service.uploadUrl + 'support/';
+    this.url = this.service.uploadUrl;
     this.downurl = service.downloadUrl;
     this.assign_login_data = this.session.getSession();
     this.assign_login_data = this.assign_login_data.value;

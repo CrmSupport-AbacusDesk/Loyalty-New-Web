@@ -29,7 +29,8 @@ export class DatabaseService implements OnInit {
   // / build command:-  npm run ng-high-memory//
   // <------------------ Dev Link ------------------------------>
   dbUrl = "https://dev-portal.basiq360.com/api/index.php/";
-  uploadUrl = "https://dev-portal.basiq360.com/api/uploads/";
+  uploadUrl = "";
+  // uploadUrl = "https://dev-portal.basiq360.com/api/uploads/";
   downloadUrl = "https://dev-portal.basiq360.com/api/uploads/Download_excel/";
   attachmentUrl = "https://dev-portal.basiq360.com/api/uploads/Attachment/";
   producation: boolean = false;

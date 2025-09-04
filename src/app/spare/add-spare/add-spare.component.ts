@@ -41,8 +41,8 @@ export class AddSpareComponent implements OnInit {
     });
     console.log(data);
     
-    this.uploadurl = this.service.uploadUrl + 'service_task/'
-    this.url = this.service.uploadUrl + 'service_task/'
+    this.uploadurl = this.service.uploadUrl
+    this.url = this.service.uploadUrl
 
 
       this.route.params.subscribe(params => {

@@ -41,7 +41,7 @@ export class PurchaseDetailComponent implements OnInit {
       let id = params.id.replace(/_/g, '/');
       this.product_id = this.cryptoService.decryptId(id);
       this.service.currentUserID = this.cryptoService.decryptId(id)
-      this.url = this.service.uploadUrl + 'product_image/';
+      this.url = this.service.uploadUrl;
       if (id) {
         this.getProductDetail();
       }

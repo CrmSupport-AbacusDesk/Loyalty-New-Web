@@ -36,7 +36,7 @@ export class SecondaryOrderDetailComponent implements OnInit {
   
   constructor(public route: ActivatedRoute,  public cryptoService:CryptoService, public location: Location, public service: DatabaseService, public dialog: MatDialog, public session: sessionStorage, public dialogs: DialogComponent, public toast: ToastrManager) {
     this.login_data = this.session.getSession();
-    this.img_url = this.service.uploadUrl + 'order_docs/';
+    this.img_url = this.service.uploadUrl;
     this.login_data = this.login_data.value.data;
        this.userData = JSON.parse(localStorage.getItem('st_user'));
         this.logined_user_data = this.userData['data'];
@@ -157,7 +157,7 @@ export class SecondaryOrderDetailComponent implements OnInit {
     this.service.post_rqst(id, "Order/exportSecondaryOrderPdf").subscribe((result) => {
       if (result['statusCode'] == 200) {
         this.skLoading = false;
-        window.open(this.service.uploadUrl + 'orderPdf/' + result['file_name']);
+        window.open(this.service.uploadUrl);
       } else {
         this.skLoading = false;
         this.toast.errorToastr(result['statusMsg'])

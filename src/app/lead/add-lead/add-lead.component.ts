@@ -47,8 +47,8 @@ export class AddLeadComponent implements OnInit {
   constructor(public service: DatabaseService, public uploadDoc:uploadImgService,
    private zone: NgZone, public cryptoService: CryptoService, public router: Router, public location: Location, public rout: Router, public session: sessionStorage, public dialog: DialogComponent, public ActivatedRoute: ActivatedRoute, public toast: ToastrManager) {
     this.today_date = new Date();
-    this.url = this.service.uploadUrl + 'Attachment/';
-    this.enquiryUrl = service.uploadUrl + 'enquiry/';
+    this.url = this.service.uploadUrl;
+    this.enquiryUrl = service.uploadUrl;
     this.userData = JSON.parse(localStorage.getItem('st_user'));
     this.userId = this.userData['data']['id'];
     this.userName = this.userData['data']['name'];

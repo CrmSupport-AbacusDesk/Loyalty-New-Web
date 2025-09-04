@@ -62,8 +62,8 @@ export class AttendanceDetailComponent implements OnInit {
       replaceUrl = 'event_file/'
     }
 
-    this.url = this.service.uploadUrl + replaceUrl;
-    this.MeterImageUrl = this.service.uploadUrl + 'meter_image/';
+    this.url = this.service.uploadUrl;
+    this.MeterImageUrl = this.service.uploadUrl;
     this.assign_login_data2 = this.session.getSession();
 
     this.assign_login_data2 = this.assign_login_data2.value;

@@ -332,7 +332,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row" *ngIf="formData.length > 0">
+            <!-- <div class="row" *ngIf="formData.length > 0">
                 <div class="col s12">
                     <div class="card pb0">
                         <div class="card-head">
@@ -348,7 +348,6 @@
                                                 <mat-label>{{ row.field_placeholder ? (row.field_placeholder |
                                                     titlecase) : '' }}</mat-label>
 
-                                                <!-- Dropdown Field -->
                                                 <ng-container *ngIf="row.field_type === 'Dropdown'">
                                                     <mat-select name="{{ row.field_name }}" [(ngModel)]="row.value"
                                                         #ngModelCtrl="ngModel" [required]="row.is_mandate === 'YES'"
@@ -360,7 +359,6 @@
                                                     </mat-select>
                                                 </ng-container>
 
-                                                <!-- Input Field -->
                                                 <ng-container *ngIf="row.field_type !== 'Dropdown'">
                                                     <input matInput type="{{ row.field_text_type }}"
                                                         name="{{ row.field_name }}" [(ngModel)]="row.value"
@@ -370,7 +368,6 @@
                                                         [required]="row.is_mandate === 'YES'">
                                                 </ng-container>
 
-                                                <!-- Validation Messages -->
                                                 <ng-container
                                                     *ngIf="ngModelCtrl?.invalid && (ngModelCtrl?.touched || f.submitted)">
                                                     <mat-hint *ngIf="ngModelCtrl?.errors?.required">This field is
@@ -381,15 +378,12 @@
                                     </ng-container>
                                 </ng-container>
 
-
-
                                 <ng-container *ngIf="!fomDeploader">
                                     <div class="col s12 m3 l3" *ngFor="let row of dependentformData; let i = index">
                                         <mat-form-field class="cs-input" appearance="outline">
                                             <mat-label>{{ row.field_placeholder ? (row.field_placeholder | titlecase) :
                                                 '' }}</mat-label>
 
-                                            <!-- Dropdown Field -->
                                             <ng-container *ngIf="row.field_type === 'Dropdown'">
                                                 <mat-select name="{{ row.field_name }}" [(ngModel)]="row.value"
                                                     #ngModelCtrl="ngModel" [required]="row.is_mandate === 'YES'">
@@ -400,7 +394,6 @@
                                                 </mat-select>
                                             </ng-container>
 
-                                            <!-- Input Field -->
                                             <ng-container *ngIf="row.field_type !== 'Dropdown'">
                                                 <input matInput type="{{ row.field_text_type }}"
                                                     name="{{ row.field_name }}" [(ngModel)]="row.value"
@@ -410,7 +403,6 @@
                                                     [required]="row.is_mandate === 'YES'">
                                             </ng-container>
 
-                                            <!-- Validation Messages -->
                                             <ng-container
                                                 *ngIf="ngModelCtrl?.invalid && (ngModelCtrl?.touched || f.submitted)">
                                                 <mat-hint *ngIf="ngModelCtrl?.errors?.required">This field is
@@ -437,7 +429,7 @@
                     </div>
                 </div>
 
-            </div>
+            </div> -->
             <div class="row">
                 <div class="col s12">
                     <div class="text-right">

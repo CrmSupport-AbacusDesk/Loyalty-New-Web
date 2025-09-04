@@ -53,7 +53,7 @@ export class PopGiftListComponent implements OnInit {
     this.assign_login_data = this.session.getSession();
     this.assign_login_data = this.assign_login_data.value;
     this.assign_login_data2 = this.assign_login_data.data;
-    this.url = this.service.uploadUrl + 'pop_gift/';
+    this.url = this.service.uploadUrl;
   }
 
   ngOnInit() {

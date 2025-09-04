@@ -77,7 +77,7 @@ export class SaleUserDetailComponent implements OnInit {
       this.userData = JSON.parse(localStorage.getItem('st_user'));
       this.userId = this.userData['data']['id'];
       this.userName = this.userData['data']['name'];
-      this.url = this.service.uploadUrl + 'profile/'
+      this.url = this.service.uploadUrl
       this.login_data.accessAllowed = ['Enquiry', 'Site', 'Influencer Network', 'Customer Network', 'Primary Orders', 'Secondary Orders', 'Attendance', 'Check In', 'Leave', 'Travel Plan', 'Followup', 'Expense', 'Event Plan', 'Pop & Gift', 'Survey', 'Gift Gallery', 'Bonus Point', 'Qr Code', 'Redeem Request', 'Task', 'Ticket', 'Brand Audit', 'Target', 'Category', 'Sub Category', 'Products', 'PDF', 'Leave Master', 'Users', 'Designation', 'Customer Category', 'Point Category', 'Holiday', 'Allowance Master']
 
     });

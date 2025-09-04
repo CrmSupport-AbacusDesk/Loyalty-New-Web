@@ -29,7 +29,7 @@ export class GiftAddPageComponent implements OnInit {
   decryptedData:any;
 
   constructor(public service: DatabaseService, public cryptoService:CryptoService, public rout: Router, public toast: ToastrManager, public location: Location, public navparams: ActivatedRoute, private route: ActivatedRoute,) {
-    this.upload_url = this.service.uploadUrl +  'schemeRewards/'
+    this.upload_url = this.service.uploadUrl
     this.nav_data = this.navparams['params']['_value']
     this.gift_id = this.nav_data.id
     this.route.params.subscribe((params) => {

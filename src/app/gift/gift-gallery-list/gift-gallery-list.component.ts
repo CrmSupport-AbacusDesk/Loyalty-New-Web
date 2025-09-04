@@ -39,7 +39,7 @@ export class GiftGalleryListComponent implements OnInit {
   url:any;
 
   constructor(public service: DatabaseService, public cryptoService:CryptoService, public dialogs: MatDialog,public alert: DialogComponent,public toast:ToastrManager,public session: sessionStorage) {
-    this.url = this.service.uploadUrl + 'gift_gallery/'
+    this.url = this.service.uploadUrl
     this.page_limit = this.service.pageLimit;
     this.assign_login_data = this.session.getSession();
     this.logined_user_data = this.assign_login_data.value;

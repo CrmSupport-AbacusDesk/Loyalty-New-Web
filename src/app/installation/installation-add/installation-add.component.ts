@@ -77,7 +77,7 @@ export class InstallationAddComponent implements OnInit {
     public dialog: DialogComponent,
     public dialog2: MatDialog) {
 
-    this.url = this.service.uploadUrl + 'service_task/'
+    this.url = this.service.uploadUrl
 
     this.getStateList();
     this.route.params.subscribe(params => {

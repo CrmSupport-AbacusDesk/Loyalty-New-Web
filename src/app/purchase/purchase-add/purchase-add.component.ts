@@ -46,7 +46,7 @@ export class PurchaseAddComponent implements OnInit {
     private route: ActivatedRoute,
     public dialog: DialogComponent,
     public dialog2: MatDialog) {
-      this.url = this.service.uploadUrl + 'product_image/';
+      this.url = this.service.uploadUrl;
       this.userData = JSON.parse(localStorage.getItem('st_user'));
       this.userId = this.userData['data']['id'];
       this.userName = this.userData['data']['name'];

@@ -43,7 +43,7 @@ export class ProductDetailComponent implements OnInit {
       this.encrypt_id = params.id
       this.product_id = this.cryptoService.decryptId(id);
       this.service.currentUserID = this.cryptoService.decryptId(id)
-      this.url = this.service.uploadUrl + 'product_image/';
+      this.url = this.service.uploadUrl;
       if (id) {
         this.getProductDetail();
       }
@@ -66,13 +66,10 @@ export class ProductDetailComponent implements OnInit {
       else {
         this.toast.errorToastr(result['statusMsg']);
       }
-      
- 
     }
     ));
 
   }
-
 
   imageModel(image) {
     const dialogRef = this.dialog.open(ImageModuleComponent, {

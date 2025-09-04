@@ -73,8 +73,8 @@ export class InfluencerDetailComponent implements OnInit {
     this.page_limit = service.pageLimit;
     this.today_date = new Date();
     this.downurl = service.downloadUrl;
-    this.url = this.service.uploadUrl + 'influencer_doc/';
-    this.profileUrl = this.service.uploadUrl + 'influencer_doc/';
+    this.url = this.service.uploadUrl;
+    this.profileUrl = this.service.uploadUrl;
     this.login_data = this.session.getSession();
     this.login_data = this.login_data.value;
     this.login_data5 = this.login_data.data;

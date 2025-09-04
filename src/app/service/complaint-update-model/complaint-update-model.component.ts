@@ -32,7 +32,7 @@ export class ComplaintUpdateModelComponent implements OnInit {
 
   constructor(@Inject(MAT_DIALOG_DATA) public data, public cryptoService:CryptoService, public dialog: MatDialog, public service: DatabaseService, public session: sessionStorage, public toast: ToastrManager, public dialogRef: MatDialogRef<ComplaintUpdateModelComponent>) {
 
-    this.url = this.service.uploadUrl + 'product_image/';
+    this.url = this.service.uploadUrl;
     console.log(data);
   }
 

@@ -44,7 +44,7 @@ export class InstallationDetailComponent implements OnInit {
 
   constructor(public location: Location, public cryptoService:CryptoService, public session: sessionStorage, private router: Router, public alert: DialogComponent, public service: DatabaseService, public editdialog: DialogService, public dialog: MatDialog, public route: ActivatedRoute, public toast: ToastrManager, public excelservice: ExportexcelService, public dialog1: DialogComponent) {
 
-    this.url = this.service.uploadUrl + 'service_task/'
+    this.url = this.service.uploadUrl
     this.route.params.subscribe(params => {
       this.id = params.id;
       this.service.currentUserID = params.id

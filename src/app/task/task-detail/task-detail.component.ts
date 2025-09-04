@@ -28,14 +28,14 @@ export class TaskDetailComponent implements OnInit {
     
     this.assign_login_data = this.session.getSession();
     this.logined_user_data = this.assign_login_data.value.data;
-    this.url = this.service.uploadUrl + 'task/';
+    this.url = this.service.uploadUrl;
     
     
     this.route.params.subscribe(params => {
       let id = params.id.replace(/_/g, '/');
       this.task_id = this.cryptoService.decryptId(id);
       this.service.currentUserID = this.cryptoService.decryptId(id)
-      this.url = this.service.uploadUrl + 'product_image/';
+      this.url = this.service.uploadUrl;
       if (id) {
         this.getTaskDetail();
       }

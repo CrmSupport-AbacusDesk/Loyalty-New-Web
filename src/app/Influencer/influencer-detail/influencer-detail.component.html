@@ -61,7 +61,7 @@
 
                             <div class="block-feilds">
                                 <span>User ID</span>
-                                <p>{{(network | slice:0:1)||'#'}}{{Influencer_Detail.unique_id}}</p>
+                                <p>{{Influencer_Detail.unique_id || 'N/A'}}</p>
                             </div>
 
                             <div class="block-feilds user-dp">
@@ -420,7 +420,7 @@
                             </i>
                         </h2>
                         <div class="left-auto"
-                            *ngIf="Influencer_Detail.kyc_status != 'Verified' && login_data5.edit_influencer=='1'">
+                            *ngIf="Influencer_Detail.status=='Approved' && Influencer_Detail.kyc_status != 'Verified' && login_data5.edit_influencer=='1'">
                             <button matTooltip="Update KYC Status" (click)="update(Influencer_Detail.id)"
                                 mat-raised-button color="primary">Update KYC Status</button>
                         </div>
@@ -454,7 +454,7 @@
                 </div>
 
 
-                <ng-container *ngIf="!skLoading">
+                <!-- <ng-container *ngIf="!skLoading">
                     <div class="card mt16" *ngIf="Influencer_Detail.form_builder.length > 0">
                         <div class="card-head">
                             <h2>Additional Details</h2>
@@ -478,7 +478,7 @@
                             </div>
                         </div>
                     </div>
-                </ng-container>
+                </ng-container> -->
 
                 <div class="card" *ngIf="skLoading">
                     <div class="sk-head">

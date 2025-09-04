@@ -74,7 +74,7 @@ export class SchemeSubAddComponent implements OnInit {
     this.nav_data = this.navparams['params']['_value']
     this.gift_id = this.nav_data.id;
     this.scheme_type = this.nav_data.type;
-    this.upload_url = this.service.uploadUrl + 'schemeBanners/'
+    this.upload_url = this.service.uploadUrl
     this.userData = JSON.parse(localStorage.getItem('st_user'));
     this.userId = this.userData['data']['id'];
     this.userName = this.userData['data']['name'];
