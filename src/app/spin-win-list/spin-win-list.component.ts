@@ -44,7 +44,7 @@ export class SpinWinListComponent implements OnInit {
 
 
   constructor(public service: DatabaseService, public cryptoService:CryptoService,public toast: ToastrManager, public dialogs: MatDialog, public alert: DialogComponent, public session: sessionStorage) {
-    this.url = this.service.uploadUrl + 'badge_img/'
+    this.url = this.service.uploadUrl
     this.today_date = new Date();
     this.downurl = service.downloadUrl;
     this.page_limit = service.pageLimit;

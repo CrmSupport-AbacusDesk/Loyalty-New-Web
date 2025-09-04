@@ -35,7 +35,7 @@ export class ContractorMeetDetailComponent implements OnInit {
     public progressService: ProgressService,
     public session: sessionStorage
   ) {
-    this.img_url = this.service.uploadUrl + 'event_file/';
+    this.img_url = this.service.uploadUrl;
     this.route.params.subscribe(params => {
       let id = params.id.replace(/_/g, '/');
       this.meetingID = this.cryptoService.decryptId(id)

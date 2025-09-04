@@ -106,7 +106,7 @@ export class AddInfluencerComponent implements OnInit {
         
         ngOnInit() {
             this.route.queryParams.subscribe(params => {
-                this.uploadurl = this.service.uploadUrl + 'influencer_doc/'
+                this.uploadurl = ''
                 this.data.country = 'india';
                 if (params.type) {
                     let id 
@@ -142,9 +142,9 @@ export class AddInfluencerComponent implements OnInit {
                 
             });
             
-            if(!this.data.id){
-                this.getFormData();
-            }
+            // if(!this.data.id){
+            //     this.getFormData();
+            // }
             
             this.getSalesUser('');
             this.distributorList('', '');
@@ -160,8 +160,8 @@ export class AddInfluencerComponent implements OnInit {
                 result = this.service.payLoad ? result : this.cryptoService.decryptData(JSON.stringify(result));
                 if (result['statusCode'] == 200) {
                     this.data = result['result'];
-                    this.formData = result['result']['form_builder'];
-                    this.dependentformData = result['result']['form_builder_dependent'];
+                    // this.formData = result['result']['form_builder'];
+                    // this.dependentformData = result['result']['form_builder_dependent'];
                     
                     if (this.data.state) {
                         this.getDistrict(1,'');
@@ -516,16 +516,16 @@ export class AddInfluencerComponent implements OnInit {
             this.data.created_by_name = this.userName
             this.data.created_by_id = this.userId;
             this.savingFlag = true;
-            this.formData.forEach((item) => {
-                if (item.dependent_flag === 1) {
-                    if (item.dependent_field_name === this.data.field_type && item.dependent_field_value === this.data.type_name) {
-                    } else {
-                        item.value = '';
-                    }
-                }
-            });
-            this.data.form_builder = this.formData;
-            this.data.form_builder_dependent = this.dependentformData;
+            // this.formData.forEach((item) => {
+            //     if (item.dependent_flag === 1) {
+            //         if (item.dependent_field_name === this.data.field_type && item.dependent_field_value === this.data.type_name) {
+            //         } else {
+            //             item.value = '';
+            //         }
+            //     }
+            // });
+            // this.data.form_builder = this.formData;
+            // this.data.form_builder_dependent = this.dependentformData;
             
             let header
             if (this.params_id) {

@@ -45,7 +45,7 @@ export class ServiceInvoiceListComponent implements OnInit {
 
 
   constructor(public session: sessionStorage,   public cryptoService:CryptoService,private router: Router, public alert: DialogComponent, public service: DatabaseService, public editdialog: DialogService, public dialog: MatDialog, public route: ActivatedRoute, public toast: ToastrManager, public excelservice: ExportexcelService, public dialog1: DialogComponent) {
-    this.url = this.service.uploadUrl + 'service_task/'
+    this.url = this.service.uploadUrl
     this.downurl = service.downloadUrl
     this.page_limit = service.pageLimit;
   }

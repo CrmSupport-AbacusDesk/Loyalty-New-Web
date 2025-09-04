@@ -105,7 +105,7 @@ export class AddDistributionComponent implements OnInit {
         public cryptoService: CryptoService,
         private http: HttpClient) {
         this.uploadurl = service.uploadUrl;
-        this.url = this.service.uploadUrl + 'retailer_doc/';
+        this.url = this.service.uploadUrl;
          this.GetBrandList();
         this.getSalesUser('');
         this.getStateList('');

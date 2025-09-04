@@ -50,7 +50,7 @@ export class GiftAddComponent implements OnInit {
     this.data.gift_type = 'Gift'
     this.gift_id = this.nav_data.id;
     this.gift_type = this.nav_data.type;
-    this.upload_url = this.service.uploadUrl + 'gift_gallery/'
+    this.upload_url = this.service.uploadUrl
     this.userData = JSON.parse(localStorage.getItem('st_user'));
     this.userId = this.userData['data']['id'];
     this.userName = this.userData['data']['name'];

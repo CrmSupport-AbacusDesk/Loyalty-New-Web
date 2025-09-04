@@ -206,7 +206,7 @@
                     
                 </div>
 
-                <ng-container *ngIf="!skLoading">
+                <!-- <ng-container *ngIf="!skLoading">
                     <div class="card mt16" *ngIf="getData.form_builder.length > 0">
                       <div class="card-head">
                         <h2>Additional Details</h2>
@@ -228,7 +228,7 @@
                         </div>
                       </div>
                     </div>
-                  </ng-container>
+                  </ng-container> -->
                 <!-- product data end -->
                 
                 
@@ -256,7 +256,7 @@
                     <div class="card-body">
                         <div class="img-container">
                             <div class="image-block" *ngFor="let row of productImg">
-                                <img [src]="url+row.image" (click)="imageModel(url+row.image)" style="cursor: zoom-in;">
+                                <img [src]="row.image" (click)="imageModel(url+row.image)" style="cursor: zoom-in;">
                             </div>
                             <div class="image-block" *ngIf="!productImg.length">
                                 <img src="assets/img/no_image.png">

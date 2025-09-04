@@ -44,7 +44,7 @@ export class HeaderComponent implements OnInit {
   accList:any=[]
   
   constructor(private renderer: Renderer2, public dialog2:MatDialog, public cryptoService: CryptoService, public session: sessionStorage, public toastCtrl: ToastrManager, public service: DatabaseService, public router: Router, public dialog: DialogComponent, private progressService: ProgressService) {
-    this.url = this.service.uploadUrl + 'logo/';
+    this.url = this.service.uploadUrl;
     this.login_data = this.session.getSession();
     this.login_data = this.login_data.value;
     this.login_data = this.login_data.data;

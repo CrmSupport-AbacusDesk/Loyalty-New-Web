@@ -44,7 +44,7 @@ export class SchemeDetailComponent implements OnInit {
         this.service.post_rqst({'id':this.paramData.id}, 'Scheme/SchemeDetails').subscribe((result) => {
             if (result['statusCode'] == 200) {
                 this.data = result['result']
-                this.data.image = this.service.uploadUrl+"schemeBanners/"+this.data.image
+                this.data.image = this.service.uploadUrl
             }
             else {
                 this.toast.errorToastr(result['statusMsg'])

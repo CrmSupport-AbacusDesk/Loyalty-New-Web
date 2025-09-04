@@ -53,7 +53,7 @@ export class AddProductComponent implements OnInit {
     public uploadDoc:uploadImgService,
     public dialog2: MatDialog) {
       
-      this.url = this.service.uploadUrl + 'product_image/';
+      this.url = this.service.uploadUrl;
       this.getSegment();
       this.pointCategory_data('');
       this.userData = JSON.parse(localStorage.getItem('st_user'));
@@ -80,9 +80,9 @@ export class AddProductComponent implements OnInit {
         }
       });
       
-      if(!this.data.id){
-        this.getFormData();
-      }
+      // if(!this.data.id){
+      //   this.getFormData();
+      // }
       
     }
     getSegment() {
@@ -206,9 +206,9 @@ export class AddProductComponent implements OnInit {
           this.data.segment_id = result.product_detail.category_id.toString();
           this.data.warranty_period = result.product_detail.warranty_period.toString();
           this.data.point_category_id = result.product_detail.point_category_id.toString();
-          this.data.sub_segment_id = result.product_detail.sub_category_id.toString();
+          this.data.sub_segment_id = result.product_detail.sub_category_id ? result.product_detail.sub_category_id.toString() : '';
           this.data.boxWOItem = result.product_detail.boxWOItem.toString();
-          this.formData = result['product_detail']['form_builder'];
+          // this.formData = result['product_detail']['form_builder'];
           this.dependentformData = result['product_detail']['form_builder_dependent'];
           if (result.product_detail.category_id) {
             this.getSubCatgory(this.data.segment_id)

@@ -41,7 +41,7 @@ export class OrderDetailComponent implements OnInit {
     userData: any;
 
     constructor(public route: ActivatedRoute, public service: DatabaseService, public cryptoService: CryptoService, public toast: ToastrManager, public dialog: MatDialog, public session: sessionStorage, public dialogs: DialogComponent, public router: Router, public alert: DialogComponent) {
-        this.img_url = this.service.uploadUrl + 'order_docs/';
+        this.img_url = this.service.uploadUrl;
         this.login_data = this.session.getSession();
         this.login_data = this.login_data.value.data;
 
@@ -283,7 +283,7 @@ export class OrderDetailComponent implements OnInit {
             if (result['statusCode'] == 200) {
                 this.skLoading = false;
 
-                window.open(this.service.uploadUrl + linkUrl + result['file_name']);
+                window.open(this.service.uploadUrl);
                 setTimeout(() => {
                     this.loader = '';
 

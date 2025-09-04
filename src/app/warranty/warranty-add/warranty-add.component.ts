@@ -80,7 +80,7 @@ export class WarrantyAddComponent implements OnInit {
     public dialog: DialogComponent,
     public dialog2: MatDialog) {
 
-      this.uploadurl = this.service.uploadUrl + 'service_task/'
+      this.uploadurl = this.service.uploadUrl
 
       this.route.params.subscribe(params => {
         this.id = params.id;

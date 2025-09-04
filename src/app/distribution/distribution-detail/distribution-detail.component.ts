@@ -116,7 +116,7 @@ export class DistributionDetailComponent implements OnInit {
         public cryptoService: CryptoService,
         public renderer: Renderer2,
         public location: Location,) {
-        this.img_url = this.service.uploadUrl + 'influencer_doc/';
+        this.img_url = this.service.uploadUrl;
         console.log(this.img_url)
         this.page_limit = service.pageLimit;
         this.date = new Date();
@@ -223,7 +223,7 @@ export class DistributionDetailComponent implements OnInit {
     ngOnInit() {
         this.route.params.subscribe(params => {
             this.networkName = params.type;
-            this.url = this.service.uploadUrl + 'retailer_doc/'
+            this.url = this.service.uploadUrl
             let usertype
             usertype = params.type
             let id = params.id.replace(/_/g, '/');

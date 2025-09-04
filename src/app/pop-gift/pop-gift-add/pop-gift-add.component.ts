@@ -41,7 +41,7 @@ export class PopGiftAddComponent implements OnInit {
     public rout: Router) {
       
       this.data.gift_type = 'Marketing Material';
-      this.url = this.service.uploadUrl + 'pop_gift/';
+      this.url = this.service.uploadUrl;
       this.route.params.subscribe(params => {
         
         this.id = params.id;

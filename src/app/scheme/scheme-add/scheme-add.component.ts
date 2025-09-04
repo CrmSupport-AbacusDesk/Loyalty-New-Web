@@ -359,7 +359,7 @@ fetchDetail() {
    
     if (this.decryptedData['statusCode'] == 200) {
      this.data = this.decryptedData['result']
-     this.data.image = this.service.uploadUrl+"schemeBanners/"+this.data.image
+     this.data.image = this.service.uploadUrl
      if(this.slabId){
        this.scheme_slab = this.data.scheme_slab.filter((row)=>row.id==this.slabId)[0]
        this.scheme_slab.slab_item_arr = this.scheme_slab.scheme_item_list;
