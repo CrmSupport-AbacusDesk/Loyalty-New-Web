@@ -48,7 +48,7 @@ export class UploadFileModalComponent implements OnInit {
 
 
   constructor(@Inject(MAT_DIALOG_DATA) public data, public cryptoService: CryptoService, public toast: ToastrManager, public service: DatabaseService, public ActivatedRoute: ActivatedRoute, public dialog: DialogComponent, public dialogRef: MatDialogRef<UploadFileModalComponent>) {
-    this.uploadurl = service.uploadUrl + '';
+    this.uploadurl = service.uploadUrl;
     this.url = this.service.uploadUrl;
     this.come_from = data['from'];
     this.modal_type = data['modal_type'];

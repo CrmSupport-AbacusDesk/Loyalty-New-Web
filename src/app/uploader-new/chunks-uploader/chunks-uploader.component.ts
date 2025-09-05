@@ -56,7 +56,7 @@ export class ChunksUploaderComponent implements OnInit {
     this.modal_type = data['modal_type'];
     this.today_date = new Date();
     this.downurl = service.uploadUrl;
-    this.uploadurl = service.uploadUrl + '';
+    this.uploadurl = service.uploadUrl;
     localStorage.setItem('uploder_name', JSON.stringify(this.modal_for));
     if (this.modal_for == 'Travel Plan Daily' || this.modal_for == 'Travel Plan Monthly') {
       this.getSalesUserForReporting();

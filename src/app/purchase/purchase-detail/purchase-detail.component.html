@@ -147,17 +147,17 @@
                 <li class="multi-images">
                   <ng-container *ngIf="getData.img && getData.img.length > 0">
                     <label class="cs-file-img" *ngFor="let val of getData.img">
-                      <img *ngIf="val.image!=null &&val.image!='' && !val.image.endsWith('.pdf')" src="{{service.uploadUrl+'purchase/'+val.image}}"
-                      (click)="imageModel(service.uploadUrl+'purchase/'+val.image)">
+                      <img *ngIf="val.image!=null &&val.image!='' && !val.image.endsWith('.pdf')" src="{{val.image}}"
+                      (click)="imageModel(val.image)">
 
-                      <a class="cs-file-img pointer" *ngIf="val.image!=null &&val.image!='' && val.image.endsWith('.pdf')" target="_blank" href="{{service.uploadUrl+'purchase/'+val.image}}">
+                      <a class="cs-file-img pointer" *ngIf="val.image!=null &&val.image!='' && val.image.endsWith('.pdf')" target="_blank" href="{{val.image}}">
                         <img src="assets/img/icons/pdf.png">
                       </a>
                     </label>
                   </ng-container>
                   
                   <ng-container *ngIf="getData.pdf && getData.pdf.length > 0">
-                    <a class="cs-file-img pointer" *ngFor="let val of getData.pdf" target="_blank" href="{{service.uploadUrl+'PurchasePdf/'+val.pdf}}">
+                    <a class="cs-file-img pointer" *ngFor="let val of getData.pdf" target="_blank" href="{{val.pdf}}">
                       <img src="assets/img/icons/pdf.png">
                     </a>
                   </ng-container>

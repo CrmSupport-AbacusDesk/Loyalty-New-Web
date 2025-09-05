@@ -74,7 +74,7 @@ export class LeadDetailComponent implements OnInit {
       this.login_data = this.session.getSession();
       this.login_data = this.login_data.value.data;
       this.minDate = new Date();
-      this.enquiryUrl = service.uploadUrl + 'enquiry/';
+      this.enquiryUrl = service.uploadUrl;
       this.tabActive('tab1');
       
       this.route.params.subscribe(params => {

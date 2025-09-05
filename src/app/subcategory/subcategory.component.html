@@ -123,8 +123,8 @@
                 </td>
                 <td class="w100 text-center"  *ngIf="catImgFlag=='1'">
                   <img *ngIf="dist.image && dist.image!=''" height="40px" width="40px" style="cursor: zoom-in;"
-                    src="{{service.uploadUrl+'product_image/'+dist.image}}"
-                    (click)="imageModel(service.uploadUrl+'product_image/'+dist.image)" />
+                    src="{{dist.image}}"
+                    (click)="imageModel(dist.image)" />
                   <img *ngIf="!dist.image || dist.image==''" height="40px" width="40px"
                     src="assets/img/no_image_found.png" />
                 </td>

@@ -32,7 +32,7 @@
         <ng-container *ngIf="!loader">
           <div class="pdf-block" *ngFor="let row of document; let i = index;">
             <img src="assets/img/icons/pdf.png">
-            <a target="_blank" href="{{url+row.doc}}">{{row.title| titlecase }}- ({{row.type ? (row.type.replaceAll('_', ' ')) : ''}})</a>
+            <a target="_blank" href="{{row.doc}}">{{row.title| titlecase }}- ({{row.type ? (row.type.replaceAll('_', ' ')) : ''}})</a>
             <div class="action-button right-action-btn">
               <button  mat-icon-button  matTooltip="Delete" (click)="delete(row.id)">
                 <i class="material-icons del">delete</i>

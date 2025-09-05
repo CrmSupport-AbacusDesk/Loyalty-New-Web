@@ -10,8 +10,6 @@ import { ProgressService } from 'src/app/progress.service';
 import { Router } from '@angular/router';
 declare const L: any
 
-
-
 @Component({
     selector: 'app-status-modal',
     templateUrl: './status-modal.component.html'
@@ -75,15 +73,11 @@ export class StatusModalComponent implements OnInit {
     transportList: any = [];
     discountList: any = [];
 
-
-
     constructor(@Inject(MAT_DIALOG_DATA) public data, public rout: Router, public progressService: ProgressService, public cryptoService: CryptoService, public dialog: MatDialog, public dialog1: DialogComponent, public service: DatabaseService, public session: sessionStorage, public toast: ToastrManager, public dialogRef: MatDialogRef<StatusModalComponent>,) {
         if ((this.data.from == "segment_list_page" && data.type == 'edit' || data.type == 'view') || this.data.from == "dr_detail") {
-            if (this.data.discountList.length > 0) {
-                this.discountList = this.data.discountList;
-
-
-            }
+            // if (this.data.discountList.length > 0) {
+            //     this.discountList = this.data.discountList;
+            // }
         }
         this.userData = JSON.parse(localStorage.getItem('st_user'));
         this.logined_user_data = this.userData['data'];

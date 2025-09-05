@@ -452,13 +452,13 @@
                 </a>
             </li>
 
-            <li
+            <!-- <li
                 *ngIf="login_data.access_level_new == '3' && (data.filter_type== 'SFA' || data.filter_type== 'DMS' || data.filter_type== 'LOYALTY' || data.filter_type== 'All')">
                 <a mat-button routerLink="/whatsapp" (click)="activeTabHandler()" routerLinkActive="active">
                     <i class="material-icons ">chat</i>
                     Whatsapp Integration
                 </a>
-            </li>
+            </li> -->
 
             <li class="dropdown"
                 *ngIf="login_data.view_redeem_request=='1' && (data.filter_type== 'DMS' || data.filter_type== 'LOYALTY' || data.filter_type== 'All')">

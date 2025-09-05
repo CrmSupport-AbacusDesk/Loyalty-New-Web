@@ -208,7 +208,7 @@
                                                 routerLink="influencer-detail/{{row.encrypt_id}}/{{type}}"
                                                 [disabled]="row.mobile_no == '8800123607'">
                                                 {{row[header.headerEncodedName]? (header.headerEncodedName ===
-                                                'unique_id'? (network ? (network | slice:0:1) : '#') +
+                                                'unique_id'?
                                                 row[header.headerEncodedName]: row[header.headerEncodedName]) : '--' }}
                                                 <!-- {{!row[header.headerEncodedName]?'--': header.headerEncodedName == 'unique_id' ? ((network | slice:0:1)||'#'+row[header.headerEncodedName])    : row[header.headerEncodedName]}} -->
                                             </button>
