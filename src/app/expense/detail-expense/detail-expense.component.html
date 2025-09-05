@@ -78,14 +78,14 @@
               </div>
               <div class="block-feilds">
                 <span>Start Meter Reading</span>
-                <img *ngIf="expenseDetail.start_meter_image!=null &&expenseDetail.start_meter_image!=''" src="{{service.uploadUrl+'meter_image/'+expenseDetail.start_meter_image}}"
-                (click)="imageModel(service.uploadUrl+'meter_image/'+expenseDetail.start_meter_image)">
+                <img *ngIf="expenseDetail.start_meter_image!=null &&expenseDetail.start_meter_image!=''" src="{{expenseDetail.start_meter_image}}"
+                (click)="imageModel(expenseDetail.start_meter_image)">
                 <p>{{expenseDetail.start_meter_reading ? expenseDetail.start_meter_reading : '0' }}</p>
               </div>
               <div class="block-feilds">
                 <span>Stop Meter Reading</span>
-                <img *ngIf="expenseDetail.stop_meter_image!=null &&expenseDetail.stop_meter_image!=''" src="{{service.uploadUrl+'meter_image/'+expenseDetail.stop_meter_image}}"
-                (click)="imageModel(service.uploadUrl+'meter_image/'+expenseDetail.stop_meter_image)">
+                <img *ngIf="expenseDetail.stop_meter_image!=null &&expenseDetail.stop_meter_image!=''" src="{{expenseDetail.stop_meter_image}}"
+                (click)="imageModel(expenseDetail.stop_meter_image)">
                 <p>{{expenseDetail.stop_meter_reading ? expenseDetail.stop_meter_reading : '0' }}</p>
               </div>
               <div class="block-feilds" >
@@ -275,12 +275,12 @@
             <ul class="product-images">
               <li class="multi-images">
                 <label class="cs-file-img" *ngFor="let val of expenseDetail.expBills">
-                  <img *ngIf="val.image!=null &&val.image!=''" src="{{service.uploadUrl+'expense/'+val.image}}"
-                    (click)="imageModel(service.uploadUrl+'expense/'+val.image)">
+                  <img *ngIf="val.image!=null &&val.image!=''" src="{{val.image}}"
+                    (click)="imageModel(val.image)">
                 </label>
 
 
-                <a class="cs-file-img pointer" *ngFor="let val of expenseDetail.expPDF" target="_blank" href="{{service.uploadUrl+'ExpensePdf/'+val.pdf}}">
+                <a class="cs-file-img pointer" *ngFor="let val of expenseDetail.expPDF" target="_blank" href="{{val.pdf}}">
                   <img src="assets/img/icons/pdf.png">
                 </a>
               </li>

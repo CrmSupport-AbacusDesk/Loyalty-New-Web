@@ -71,7 +71,7 @@ export class SiteDetailComponent implements OnInit {
     private bottomSheet: MatBottomSheet,
     public toast: ToastrManager,
     private _location: Location,) {
-      this.url = service.uploadUrl + 'site/';
+      this.url = service.uploadUrl;
       this.page_limit = service.pageLimit;
       this.login_data = this.session.getSession();
       this.login_data = this.login_data.value;

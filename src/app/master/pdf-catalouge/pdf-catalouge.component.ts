@@ -33,7 +33,7 @@ export class PdfCatalougeComponent implements OnInit {
     this.page_limit = this.service.pageLimit;
     this.assign_login_data = this.session.getSession();
     this.logined_user_data = this.assign_login_data.value.data;
-    this.url = service.uploadUrl + 'doc_catalogue/';
+    this.url = service.uploadUrl;
     this.getPdfList(); 
   }
   

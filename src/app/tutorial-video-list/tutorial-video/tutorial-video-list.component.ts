@@ -40,7 +40,7 @@ export class TutorialVideoListComponent implements OnInit {
 
   constructor(public rout: Router, public cryptoService: CryptoService, public service: DatabaseService, public toast: ToastrManager, public dialog: DialogComponent, public session: sessionStorage, public dialog2: MatDialog) {
     this.page_limit = 15;
-    this.bannerUlr = service.uploadUrl + 'banner/';
+    this.bannerUlr = service.uploadUrl;
 
     this.videoList();
   }

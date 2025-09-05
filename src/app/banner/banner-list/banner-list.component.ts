@@ -32,7 +32,7 @@ export class BannerListComponent implements OnInit {
 
   constructor(public rout: Router, public cryptoService:CryptoService, public service: DatabaseService, public toast: ToastrManager, public dialog: DialogComponent, public session: sessionStorage, public dialog2: MatDialog) {
     this.page_limit = this.service.pageLimit;
-    this.bannerUlr = service.uploadUrl + 'banner/';
+    this.bannerUlr = service.uploadUrl;
     this.assign_login_data = this.session.getSession();
     this.logined_user_data = this.assign_login_data.value.data;
     this.getbannerList();
